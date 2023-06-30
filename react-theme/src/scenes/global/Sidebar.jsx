@@ -62,22 +62,22 @@ const Item = ({title, to , icon, selected, setSelected}) =>{
    <ProSidebar collapsed = {isCollapesd}>
       <Menu iconShape = "square">
         {/* LOGO AND MENU ITEM */}
-      <MenuItem  onClick={()=>{setIsCollapesd(!isCollapesd)}} 
+      <MenuItem  
+      onClick={()=>{setIsCollapesd(!isCollapesd)}} 
       icon = {isCollapesd ? <MenuOutlinedIcon /> : undefined}
       style={{
         margin: "10px 0 20px 0",
         color: colors.grey[100],
       }}
       > 
-      {
-        !isCollapesd && (
+      {!isCollapesd && (
           <Box 
               display={"flex"}
               justifyContent={"space-between"}
               alignItems={"center"}
               ml = "15px"
           >
-            <Typography variant="h3" color={colors.grey[100]}>
+            <Typography variant="h5" color={colors.grey[100]}>
               ADMINS
             </Typography>
             <IconButton onClick={()=>setIsCollapesd(!isCollapesd)}>
@@ -87,8 +87,7 @@ const Item = ({title, to , icon, selected, setSelected}) =>{
       }
       </MenuItem>
                {/* USER */}
-       {
-        !isCollapesd && (
+       {!isCollapesd && (
           <Box mb="25px">
             <Box display={"flex"} justifyContent={"center"} alignItems={"center"}> 
              <img alt="profile"
@@ -114,6 +113,13 @@ const Item = ({title, to , icon, selected, setSelected}) =>{
         )}
               {/* MENU ITEMS         */}
         <Box paddingLeft= { isCollapesd ? undefined : "10%" }>
+          <Typography
+             variant="h5"
+             color={colors.grey[300]}
+             sx={{ m: "15px 0 5px 20px" }}
+          >
+            Data
+          </Typography>
           <Item 
             title={"Dashboard"}
             to={"/"}
@@ -135,7 +141,13 @@ const Item = ({title, to , icon, selected, setSelected}) =>{
             selected={selected}
             setSelected={setSelected}
            />
-
+          <Typography
+             variant="h5"
+             color={colors.grey[300]}
+             sx={{ m: "15px 0 5px 20px" }}
+          >
+            Pages
+          </Typography>
           <Item 
             title={"Invoices Balances"}
             to={"/invoices"}
@@ -164,6 +176,13 @@ const Item = ({title, to , icon, selected, setSelected}) =>{
             selected={selected}
             setSelected={setSelected}
            />
+            <Typography
+             variant="h5"
+             color={colors.grey[300]}
+             sx={{ m: "15px 0 5px 20px" }}
+          >
+            Chart
+          </Typography>
             <Item 
             title={"Bar Chart"}
             to={"/bar"}
