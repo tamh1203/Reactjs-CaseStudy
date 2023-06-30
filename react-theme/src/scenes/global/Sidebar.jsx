@@ -77,7 +77,7 @@ const Item = ({title, to , icon, selected, setSelected}) =>{
               alignItems={"center"}
               ml = "15px"
           >
-            <Typography variant="h5" color={colors.grey[100]}>
+            <Typography variant="h3" color={colors.grey[100]}>
               ADMINS
             </Typography>
             <IconButton onClick={()=>setIsCollapesd(!isCollapesd)}>
