@@ -21,7 +21,7 @@ const Invoices = () => {
     ]
     return (
         <Box m="20px">
-            <Header title="CONTACTS" subtitle="List of Contacts !" />
+            <Header title="INVOICES" subtitle="List of Invoices !" />
             <Box m ="40px 0 0 0" height="75vh" 
                  rows={mockDataInvoices}  
                  columns={columns}

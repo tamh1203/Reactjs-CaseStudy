@@ -40,12 +40,11 @@ const initialValues = {
 }
 
 const Form = () => {
-
   const isNonMobile = useMediaQuery("(min-width:600px)")
-  const setForm = [{}]
+  // const setForm = [{}]
   const handleSubmitForm = (values) =>{
-    setForm.push(values)
-    console.log(setForm);
+    // setForm.push(values)
+    console.log(values);
   }
   return ( 
     <Box m="20px">
@@ -107,7 +106,7 @@ const Form = () => {
                   name="email"
                   error={!!touched.email && !!errors.email}
                   helperText={touched.email && errors.email}
-                  sx={{ gridColumn: "span 2" }}
+                  sx={{ gridColumn: "span 4" }}
                  />
                   <TextField 
                   fullWidth
@@ -120,7 +119,7 @@ const Form = () => {
                   name="contact"
                   error={!!touched.contact && !!errors.contact}
                   helperText={touched.contact && errors.contact}
-                  sx={{ gridColumn: "span 2" }}
+                  sx={{ gridColumn: "span 4" }}
                  />
                   <TextField 
                   fullWidth
