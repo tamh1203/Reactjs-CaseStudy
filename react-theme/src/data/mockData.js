@@ -323,6 +323,12 @@ export const mockTransactions = [
     date: "2022-04-01",
     cost: "133.45",
   },
+  {
+    txId: "0315dsaa",
+    user: "jackdower",
+    date: "2022-04-01",
+    cost: "133.45",
+  },
 ];
 
 export const mockBarData = [

@@ -1,5 +1,5 @@
 import {Box, Typography, useTheme } from '@mui/material'
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { tokens  } from '../../theme';
 import { mockDataTeam } from "../../data/mockData"
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
@@ -52,13 +52,8 @@ const Team = () => {
                 <DataGrid 
                   rows={mockDataTeam}  
                   columns={columns}
+                  components={{Toolbar: GridToolbar}}
                   sx ={{
-                    "& .MuiDataGrid-root":{
-                        border : "none"
-                    },
-                    "& .MuiDataGrid-cell":{
-                        borderBottom : "none"
-                    },
                     "& .name-column-cell":{
                         color:colors.greenAccent[300]
                     },
@@ -69,9 +64,8 @@ const Team = () => {
                     "& .MuiDataGrid-virtuaScroller":{
                         backgroundColor: colors.primary[500]
                     },
-                    "& .MuiDataGrid-footerContainer":{
-                        backgroundColor: colors.blueAccent[700],
-                        borderTop :"none"
+                    "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+                      color: `${colors.primary[100]} !important`,
                     },
                   }}
                     />

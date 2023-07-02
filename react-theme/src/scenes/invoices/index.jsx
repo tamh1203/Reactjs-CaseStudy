@@ -42,10 +42,6 @@ const Invoices = () => {
                     "& .MuiDataGrid-virtuaScroller":{
                         backgroundColor: colors.primary[500]
                     },
-                    "& .MuiDataGrid-footerContainer":{
-                        backgroundColor: colors.blueAccent[700],
-                        borderTop :"none"
-                    },
                   }}>
              <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
             </Box>
