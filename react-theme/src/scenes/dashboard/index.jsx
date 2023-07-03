@@ -1,6 +1,7 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
+import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -15,12 +16,31 @@ import ProgressCircle from "../../components/ProgressCircle";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
     <Box m="20px">
-    <Box display = "flex" justifyContent= "space-between" alignItems="center" >
-        <Header title = "DASHBOARD" subtitle = "Wellcome to DashBoard" />
-    </Box>
-    <Box
+      {/* HEADER */}
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+
+        <Box>
+          <Button
+            sx={{
+              backgroundColor: colors.blueAccent[700],
+              color: colors.grey[100],
+              fontSize: "14px",
+              fontWeight: "bold",
+              padding: "10px 20px",
+            }}
+          >
+            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+            Download Reports
+          </Button>
+        </Box>
+      </Box>
+
+      {/* GRID & CHARTS */}
+      <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
@@ -103,7 +123,8 @@ const Dashboard = () => {
             }
           />
         </Box>
-               {/* ROW 2 */}
+
+        {/* ROW 2 */}
         <Box
           gridColumn="span 8"
           gridRow="span 2"
@@ -132,12 +153,18 @@ const Dashboard = () => {
                 $59,342.32
               </Typography>
             </Box>
+            <Box>
+              <IconButton>
+                <DownloadOutlinedIcon
+                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
+                />
+              </IconButton>
+            </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard = {true} />
+            <LineChart isDashboard={true} />
           </Box>
         </Box>
-
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -188,6 +215,7 @@ const Dashboard = () => {
             </Box>
           ))}
         </Box>
+
         {/* ROW 3 */}
         <Box
           gridColumn="span 4"
@@ -248,10 +276,9 @@ const Dashboard = () => {
             <GeographyChart isDashboard={true} />
           </Box>
         </Box>
+      </Box>
     </Box>
-    </Box>
-  )
-}
+  );
+};
 
-
-export default Dashboard
+export default Dashboard;

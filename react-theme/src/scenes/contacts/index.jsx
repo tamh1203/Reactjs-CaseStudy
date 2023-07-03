@@ -1,26 +1,14 @@
 import { Box } from "@mui/material";
-import { DataGrid, GridToolbar , GridToolbarExport, GridToolbarExportContainer} from "@mui/x-data-grid";
+import { DataGrid, GridToolbar , GridToolbarExport} from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
-import { red } from "@mui/material/colors";
 
-const Contacts = () => {
+const Contacts = (props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
-  const columns = [
-    { field: "id", headerName: "ID",flex:0.5},
-    { field: "registrarId", headerName: "Registrar ID" ,flex:1},
-    { field: "name", headerName: "Name",cellClassName : "name-column-cell", flex:1},
-    { field: "age", headerName: "Age", type: "number",headerAlign: "left", align: "left",flex:0.5},
-    { field: "phone",headerName: "Phone Number", flex:1},
-    { field: "email",headerName: "Email",flex:1},
-    { field: "address",headerName: "Address",flex:2},
-    { field: "city", headerName: "City",flex:1},
-    { field: "zipCode",headerName: "Zip Code",flex:0.5},
-  ];
+  const {columns} = props
   return (
     <Box m="20px">
       <Header

@@ -3,16 +3,8 @@ import { Formik } from "formik"
 import * as yup from "yup"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import Header from "../../components/Header"
-import { mockDataTeam } from "../../data/mockData"
-import { useState } from "react"
 
-
-
-const phoneRegExp =
-  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
-
-
+const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 const checkoutSchema = yup.object().shape({
   firstName :yup.string().required("Required"),
@@ -28,7 +20,6 @@ const checkoutSchema = yup.object().shape({
   address1 :yup.string().required("Required"),
   address2 :yup.string().required("Required"),
 })
-
 
 const initialValues = {
   firstName: "",
